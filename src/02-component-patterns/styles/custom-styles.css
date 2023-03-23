@@ -22,3 +22,9 @@
   right: 10px;
   top: 0;
 }
+
+.disabled {
+  border-color: #747474 !important;
+  border-left: 1px solid #fff !important;
+  color: #747474 !important;
+}
