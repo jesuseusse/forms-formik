@@ -7,14 +7,16 @@ import {
 } from 'react-router-dom'
 import { RegisterPage } from '../03-forms/pages/RegisterPage'
 import logo from '../logo.svg'
-import { FormBasicPage } from '../03-forms/pages/FormBasicPage'
-import { FormYupPage } from '../03-forms/pages/FormYupPage'
-import { FormikComponents } from '../03-forms/pages/FormikComponents'
-import { FormikAbstraction } from '../03-forms/pages/FormikAbstraction'
+import { RegisterFormikPage } from '../03-forms/pages/RegisterFormikPage'
+import { DynamicForm } from '../03-forms/pages/DynamicForm'
+import {
+  FormBasicPage,
+  FormYupPage,
+  FormikComponents,
+  FormikAbstraction
+} from '../03-forms/pages'
 
-type Props = {}
-
-export const Navigation = ({}: Props) => {
+export const Navigation = () => {
   return (
     <BrowserRouter>
       <div className="main-layout">
@@ -61,6 +63,22 @@ export const Navigation = ({}: Props) => {
                 formik-Abstraction
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/formik-register"
+                className={({ isActive }) => (isActive ? 'nav-active' : '')}
+              >
+                formik-register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dynamic-form"
+                className={({ isActive }) => (isActive ? 'nav-active' : '')}
+              >
+                Dynamic Form
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
@@ -69,7 +87,9 @@ export const Navigation = ({}: Props) => {
           <Route path="formik-basic" element={<FormBasicPage />} />
           <Route path="formik-components" element={<FormikComponents />} />
           <Route path="formik-abstraction" element={<FormikAbstraction />} />
+          <Route path="formik-register" element={<RegisterFormikPage />} />
           <Route path="formik-yup" element={<FormYupPage />} />
+          <Route path="dynamic-form" element={<DynamicForm />} />
           <Route path="home" element={<h1>Home Page</h1>} />
           <Route path="*" element={<Navigate to="home" />} />
         </Routes>

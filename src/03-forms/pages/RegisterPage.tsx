@@ -2,21 +2,14 @@ import '../styles/styles.css'
 import { useForm } from '../hooks/useForm'
 
 export const RegisterPage = () => {
-  const {
-    formData,
-    onChange,
-    resetForm,
-    isValidEmail,
-    name,
-    email,
-    password1,
-    password2
-  } = useForm({
-    name: 'Yisus',
-    email: 'email@email.com',
-    password1: '123456',
-    password2: '123456'
-  })
+  const { onChange, isValidEmail, name, email, password1, password2 } = useForm(
+    {
+      name: 'Yisus',
+      email: 'email@email.com',
+      password1: '123456',
+      password2: '123456'
+    }
+  )
 
   return (
     <div>
